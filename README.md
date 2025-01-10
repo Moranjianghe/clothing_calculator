@@ -1,5 +1,4 @@
-# Vue 3 + Vite
+# 穿衣计算器
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+本项目是一个基于 Vue 3 开发的多语言人体热阻计算工具，用户可以通过输入皮肤温度、环境温度、蒸发放热率等参数，快速计算出服装热阻（clothing resistance）、基础热阻（basic thermal resistance）以及相关参数。工具支持多语言切换（简体中文、繁体中文、英语），并提供常见衣物热阻值与活动放热率的参考数据。对前往陌生温度旅行的人有一定参考价值。  
+This project is a multilingual body thermal resistance calculation tool developed based on Vue 3. Users can quickly calculate clothing resistance, basic thermal resistance, and other related parameters by inputting data such as skin temperature, environmental temperature, and evaporative heat loss rate. The tool supports multiple languages (Simplified Chinese, Traditional Chinese, and English) and provides reference data for common clothing thermal resistance values and activity heat loss rates. It can be a useful reference for people traveling to unfamiliar temperature environments.
