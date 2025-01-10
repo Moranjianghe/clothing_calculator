@@ -64,6 +64,28 @@ const loadLastConfig = () => {
   }
 }
 
+// 默认值常量
+const DEFAULT_VALUES = {
+  H: 58.1,
+  Ts: 33.3,
+  Ta: -20,
+  conversionFactor: 0.155,
+  basicThermalResistance: 0.78,
+  clothingResistance: 0,
+  inputI: 0
+}
+
+
+const H = ref(DEFAULT_VALUES.H)  // 单位体表面积的非蒸发放热率
+const Ts = ref(DEFAULT_VALUES.Ts) // 皮肤温度
+const Ta = ref(DEFAULT_VALUES.Ta)  // 环境温度
+const conversionFactor = ref(DEFAULT_VALUES.conversionFactor) // 热阻单位换算系数
+const basicThermalResistance = ref(DEFAULT_VALUES.basicThermalResistance) // 人体基础热阻
+const clothingResistance = ref(DEFAULT_VALUES.clothingResistance) // 服装热阻
+const inputI = ref(DEFAULT_VALUES.inputI) // 输入的服装热阻值
+
+const selectedCalculation = ref('I') // 默认计算服装热阻
+
 // 在值变化时保存配置
 watch([H, Ts, Ta, conversionFactor, basicThermalResistance, clothingResistance, inputI, selectedCalculation], () => {
   saveLastConfig()
@@ -81,24 +103,6 @@ const languages = [
   { code: 'zh-TW', name: '繁體中文', flag: 'https://upload.wikimedia.org/wikipedia/commons/7/72/Flag_of_the_Republic_of_China.svg' }
 ]
 
-// 默认值常量
-const DEFAULT_VALUES = {
-  H: 58.1,
-  Ts: 33.3,
-  Ta: -20,
-  conversionFactor: 0.155,
-  basicThermalResistance: 0.78,
-  clothingResistance: 0,
-  inputI: 0
-}
-
-const H = ref(DEFAULT_VALUES.H)  // 单位体表面积的非蒸发放热率
-const Ts = ref(DEFAULT_VALUES.Ts) // 皮肤温度
-const Ta = ref(DEFAULT_VALUES.Ta)  // 环境温度
-const conversionFactor = ref(DEFAULT_VALUES.conversionFactor) // 热阻单位换算系数
-const basicThermalResistance = ref(DEFAULT_VALUES.basicThermalResistance) // 人体基础热阻
-const clothingResistance = ref(DEFAULT_VALUES.clothingResistance) // 服装热阻
-const inputI = ref(DEFAULT_VALUES.inputI) // 输入的服装热阻值
 
 // 重置所有值到默认值
 const resetToDefault = () => {
@@ -111,7 +115,6 @@ const resetToDefault = () => {
   inputI.value = DEFAULT_VALUES.inputI
 }
 
-const selectedCalculation = ref('I') // 默认计算服装热阻
 
 // 常见衣物热阻数据
 const commonClothingData = [
@@ -526,7 +529,7 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 input[type="number"] {
-  -moz-appearance: textfield;
+  appearance: textfield;
 }
 
 /* 添加阴影过渡效果 */
